@@ -2,12 +2,6 @@
 
 set -euo pipefail
 
-# Validate arguments
-if [ $# -ne 2 ]; then
-  echo "Usage: $0 <path_to_commit> <commit_message>"
-  exit 1
-fi
-
 path_to_commit="$1"
 commit_message="Update $1"
 
