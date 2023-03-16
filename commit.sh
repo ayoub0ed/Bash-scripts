@@ -23,7 +23,7 @@ if git log --pretty=format: --full-history --name-only | grep "$path_to_commit" 
   git add -A "$path_to_commit"
   CURRENT_MESSAGE="$(git log -1 --pretty=%B)"
 
-  ${EDITOR:-nano} "$(git rev-parse --git-dir)/COMMIT_EDITMSG"
+  ${EDITOR:-Vim} "$(git rev-parse --git-dir)/COMMIT_EDITMSG"
   NEW_MESSAGE="$(cat "$(git rev-parse --git-dir)/COMMIT_EDITMSG")"
 
   git commit --amend --message="$NEW_MESSAGE"
