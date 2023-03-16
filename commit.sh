@@ -9,7 +9,7 @@ if [ $# -ne 2 ]; then
 fi
 
 path_to_commit="$1"
-commit_message="$2"
+commit_message="Update $1"
 
 # Check if the path exists
 if [ ! -e "$path_to_commit" ]; then
