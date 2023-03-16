@@ -2,8 +2,9 @@
 
 set -euo pipefail
 
-path_to_commit="$1"
-commit_message="Update $1"
+path_to_commit=$(realpath "$1")
+directory_name=$(basename "$path_to_commit")
+commit_message="Update $directory_name"
 
 # Check if the path exists
 if [ ! -e "$path_to_commit" ]; then
