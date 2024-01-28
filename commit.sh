@@ -20,16 +20,17 @@ if git log --pretty=format: --full-history --name-only | grep "$path_to_commit" 
   git merge --ff-only "origin/$(git rev-parse --abbrev-ref HEAD)"
   git checkout HEAD -- "$path_to_commit"
   git add "$path_to_commit"
-  git commit -m "$commit_message $additional_message" # Add the optional additional message to the commit message
+  #git commit -m "$commit_message $additional_message" # Add the optional additional message to the commit message
+  aicommits
   git push --force-with-lease
 else
   # If the path is not already committed, add the path to the staging area
   git add -A "$path_to_commit"
-  git commit -m "$commit_message $additional_message" # Add the optional additional message to the commit message
+  #git commit -m "$commit_message $additional_message" # Add the optional additional message to the commit message
+  aicommits
   git pull --rebase
   git push
 fi
 
 # Exit with success status code
 exit 0
-
